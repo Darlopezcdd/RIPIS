@@ -1,0 +1,104 @@
+<section class="Navegacion">
+  <section class="Logos">
+
+    <a href="https://www.utn.edu.ec/">RIPIS</a>
+  </section>
+
+  <section class="enlaces">
+
+
+    <button class="menu-toggle" (click)="toggleMenu()">
+      {{ menuVisible ? '' : 'Abrir Menú' }}
+    </button>
+
+    <ul class="menu" [class.menu-active]="menuVisible">
+
+      <li class="submenu-trigger Acerca" (mouseenter)="mostrarSubmenu('Acerca')"
+        (mouseleave)="ocultarSubmenu('Acerca')">
+        <a href="#">Acerca</a>
+        <ul class="submenu-box submenu-Acerca" *ngIf="submenuActivo === 'Acerca'">
+          <li class="opciones">
+          </li>
+        </ul>
+      </li>
+
+      <li class="submenu-trigger Beneficios" (mouseenter)="mostrarSubmenu('Beneficios')"
+        (mouseleave)="ocultarSubmenu('Beneficios')">
+        <a href="#">Beneficios</a>
+        <ul class="submenu-box submenu-Beneficios" [style.opacity]="submenuActivo === 'Beneficios' ? '1' : '0'"
+          [style.visibility]="submenuActivo === 'Beneficios' ? 'visible' : 'hidden'">
+          <li class="opciones">
+            <a href="#">Diagnóstico CTI</a>
+            <a href="#">Conectividad</a>
+          </li>
+          <li class="opciones">
+            <a href="#">Seguridad</a>
+            <a href="#">Infraestructura</a>
+          </li>
+          <li class="opciones opciones-ultimo">
+            <a href="#">Multimedia</a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="submenu-trigger Publicaciones" (mouseenter)="mostrarSubmenu('Publicaciones')"
+        (mouseleave)="ocultarSubmenu('Publicaciones')">
+        <a href="#">Publicaciones</a>
+        <ul class="submenu-box submenu-Publicaciones" [style.opacity]="submenuActivo === 'Publicaciones' ? '1' : '0'"
+          [style.visibility]="submenuActivo === 'Publicaciones' ? 'visible' : 'hidden'">
+          <li class="opciones">
+            <a href="#">Aplicaciones Académicas</a>
+            <a href="#">Recursos Académicos</a>
+          </li>
+          <li class="opciones">
+            <a href="#">Fondos Connect</a>
+            <a href="#">Acompañamiento</a>
+          </li>
+          <li class="opciones opciones-ultimo">
+            <a href="#">Capacitación</a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="submenu-trigger Comunidad" (mouseenter)="mostrarSubmenu('Comunidad')"
+        (mouseleave)="ocultarSubmenu('Comunidad')">
+        <a href="#">Comunidad</a>
+        <ul class="submenu-box submenu-Comunidad" [style.opacity]="submenuActivo === 'Comunidad' ? '1' : '0'"
+          [style.visibility]="submenuActivo === 'Comunidad' ? 'visible' : 'hidden'">
+          <li class="opciones">
+            <a href="#">Editorial</a>
+            <a href="#">Digitales</a>
+          </li>
+          <li class="opciones">
+            <a href="#">Articulación Connect</a>
+            <a href="#">Comunidad de Rectores</a>
+          </li>
+          <li class="opciones opciones-ultimo">
+            <a href="#">Divulgación</a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="submenu-trigger Eventos" (click)="mostrarSubmenu('Eventos')">
+        <a href="#">Eventos</a>
+        <ul class="submenu-box submenu-Eventos" *ngIf="submenuActivo === 'Eventos'">
+          <li class="opciones">
+
+          </li>
+        </ul>
+      </li>
+
+      <li class="submenu-trigger Contacto" (click)="mostrarSubmenu('Contacto')">
+        <a href="#">Contacto</a>
+        <ul class="submenu-box submenu-Contacto" *ngIf="submenuActivo === 'Contacto'">
+          <li class="opciones">
+
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <!-- Botón de cerrar menú solo visible cuando el menú está activo -->
+    <button class="close-menu" *ngIf="menuVisible" (click)="toggleMenu()">Cerrar Menú</button>
+  </section>
+</section>
