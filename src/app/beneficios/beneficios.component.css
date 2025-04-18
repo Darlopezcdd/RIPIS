@@ -10,7 +10,7 @@
   }
 }
 
-.Beneficios, h2, p {
+.Beneficios, h2, p, .Objetivos {
   animation: fadeInUp 1s ease-out forwards;
   opacity: 0; /* Iniciar oculto */
 }
@@ -22,21 +22,35 @@ main {
 
 
 .Contenedor {
+  display: grid;
+  margin: 3% 3% 3% 3%;
+  grid-template-columns: 40% 60%;
   animation-duration: 0.3s;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-top: 20px;
-}
-
-
-.Beneficios {
-  width: 45%;
-  background-color: #f4f7f9;
-  padding: 20px;
-  border-radius: 8px;
+  gap: 30px;
 
 }
+@media (max-width: 900px) {
+  .Contenedor {
+    display: grid;
+    grid-template-columns: none;
+    grid-auto-rows: auto;
+  gap:10px;
+  }
+  .Beneficios {
+    width: 80%;
+    background-color: #f4f7f9;
+    border-radius: 8px;
+    margin: auto;
+  }
+  .Objetivos
+  {
+    width: 80%;
+    background-color: #f4f7f9;
+    border-radius: 8px;
+    margin: auto;
+  }
+}
+
 
 h3 {
   animation-duration: 0.4s;
