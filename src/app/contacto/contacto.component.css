@@ -1,0 +1,96 @@
+
+.Contenedor{
+  display: grid;
+  grid-template-columns:1fr 1fr;
+  width:60%;
+  margin:auto;
+  padding:2%;
+}
+.Info {
+  display: grid;
+  grid-auto-rows: auto;
+  margin:0 10%;
+  height: min-content;
+}
+.Imagen_Contacto{
+  display: grid;
+  justify-items:center;
+  align-items: center;
+}
+.informacion {
+  opacity: 0;
+  transform: translateY(0); /* fallback inicial */
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+
+/* Animaciones específicas */
+
+.slash-abajo {
+  animation-name:slideDesdeAbajo;
+}
+
+.slash-izquierda {
+  animation-name: slideDesdeIzquierda;
+}
+.slash-derecha {
+  animation-name: slideDesdeDerecha;
+}
+.slash-arriba {
+  animation-name: slideDesdeArriba;
+}
+
+/* Keyframes */
+
+@keyframes slideDesdeArriba {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDesdeDerecha {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideDesdeIzquierda {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideDesdeAbajo {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (max-width: 768px) {
+  .Contenedor{
+    display: grid;
+    grid-template-columns:none;
+    grid-template-rows:1fr 1fr;
+    margin:auto;
+  }
+}

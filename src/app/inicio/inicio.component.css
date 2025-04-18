@@ -1,0 +1,432 @@
+/* Estilo para el contenedor del carrusel */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: auto; /* Altura fija del carrusel */
+  margin: auto;
+  overflow: hidden;
+  cursor: grab;
+}
+
+/* Estilo para las diapositivas */
+.carousel-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  transition: opacity 0.5s ease; /* Animación de desvanecimiento */
+}
+
+/* Estilo para la imagen dentro del carrusel */
+.carousel-slide img {
+  width: 100%;
+  height: auto; /* La imagen se ajusta a la anchura */
+}
+
+/* Estilo de desvanecimiento */
+.fade {
+  opacity: 0.5; /* Hace que la imagen desaparezca durante la transición */
+}
+
+/* Estilo para los botones de navegación */
+button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.prev-btn {
+  left: 10px;
+}
+
+.next-btn {
+  right: 10px;
+}
+
+button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Media query para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+  .carousel-container {
+    height: 400px; /* Ajustamos la altura en pantallas más pequeñas */
+  }
+
+  .carousel-slide img {
+    width: 100%;
+    height: 100%; /* Aseguramos que la imagen ocupe toda la altura disponible */
+    object-fit: cover; /* Esto hará que la imagen cubra todo el espacio sin distorsionarse */
+  }
+
+  /* Botones de navegación más pequeños en pantallas móviles */
+  button {
+    font-size: 1.5rem;
+    padding: 8px;
+  }
+
+  /* Ajustamos la posición de los botones en pantallas más pequeñas */
+  .prev-btn, .next-btn {
+    font-size: 1.5rem;
+    padding: 8px;
+  }
+}
+
+/* Media query para pantallas muy pequeñas (dispositivos móviles) */
+@media (max-width: 480px) {
+  .carousel-container {
+    height: 300px; /* Ajustamos aún más la altura en pantallas más pequeñas */
+  }
+
+  .carousel-slide img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  button {
+    font-size: 1.2rem;
+    padding: 6px;
+  }
+}
+
+
+
+/* ESTILOS DE LOS STATS*/
+
+/* Contenedor principal */
+.stats-container {
+  display: flex; /* Usamos flexbox para que los elementos estén en fila */
+  justify-content: space-between; /* Distribuir el espacio entre las cajas */
+  gap: 20px; /* Ajustamos el espacio entre las cajas */
+  padding: 20px; /* Ajustamos el espaciado interno */
+  margin: auto; /* Márgenes automáticos para centrar */
+  flex-wrap: wrap; /* Permite que las cajas se ajusten cuando el espacio es reducido */
+}
+
+/* Estilo para cada cuadro de información */
+.info {
+  background-color: #f4f4f4; /* Fondo gris claro */
+  border-radius: 10px; /* Bordes redondeados */
+  padding: 20px; /* Espaciado interno */
+  text-align: center; /* Centrado de texto */
+  flex: 1; /* Para que cada caja ocupe el mismo espacio */
+  min-width: 200px; /* Ancho mínimo */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  margin-bottom: 20px; /* Margen en la parte inferior de cada caja */
+}
+
+/* Estilo para la cantidad (número) */
+.amount {
+  font-size: 32px; /* Tamaño grande para el número */
+  color: #0055b8; /* Color azul para las cifras */
+  font-weight: bold; /* Cifra en negrita */
+}
+
+/* Estilo para la descripción */
+.description {
+  font-size: 14px; /* Tamaño de la descripción */
+  color: #555; /* Color gris para el texto */
+  margin-top: 10px; /* Espaciado entre el número y la descripción */
+}
+
+/* Media Query para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+  /* Reducir el tamaño de los cuadros para pantallas pequeñas */
+  .stats-container {
+    flex-direction: column; /* Apilar los cuadros verticalmente */
+    align-items: center; /* Centrar los cuadros */
+  }
+
+  .info {
+    width: 80%; /* Los cuadros ocupan el 80% del contenedor */
+    margin: 10px 0; /* Agregar margen entre los cuadros */
+    padding: 15px; /* Ajustar el padding para pantallas pequeñas */
+  }
+
+  .amount {
+    font-size: 24px; /* Reducir el tamaño de la cifra en móviles */
+  }
+
+  .description {
+    font-size: 12px; /* Reducir el tamaño de la descripción en móviles */
+  }
+}
+
+
+
+/* ESTILOS DE MAPA Y LEYENDAS */
+/* Estilo principal para el contenedor del mapa */
+.MapaCircular {
+  display: flex; /* Usamos flexbox para colocar el mapa y las leyendas en una fila */
+  justify-content: space-between; /* Espacio entre el mapa y las leyendas */
+  padding: 5%; /* Espaciado alrededor del contenedor */
+}
+
+/* Estilo para la imagen del mapa */
+.mapa {
+  width: 60%; /* El mapa ocupa el 60% del contenedor */
+  max-width: 600px; /* Máximo ancho para el mapa */
+  position: relative;
+}
+
+.mapa-img {
+  width: 100%; /* La imagen ocupa el 100% del contenedor */
+  height: auto; /* Mantener la proporción de la imagen */
+}
+
+/* Estilo para las leyendas */
+.redireccion {
+  width: 30%; /* Las leyendas ocupan el 30% del contenedor */
+  display: flex;
+  flex-direction: column; /* Apilar las leyendas verticalmente */
+  gap: 20px; /* Espacio entre las leyendas */
+  justify-content: center; /* Centrar las leyendas verticalmente */
+}
+
+/* Estilo para cada cuadro de leyenda */
+.cuadro {
+  background-color: #f4f4f4; /* Fondo gris claro */
+  border: 2px solid #ddd; /* Borde sutil alrededor de los cuadros */
+  border-radius: 10px; /* Bordes redondeados */
+  padding: 20px; /* Espaciado interno */
+  text-align: center; /* Centrado de texto */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+/* Estilo para el título de cada leyenda */
+legend {
+  font-size: 18px; /* Tamaño de la fuente del título */
+  font-weight: bold; /* Negrita en el título */
+  color: #333; /* Color oscuro */
+  background-color: #f4f4f4; /* Fondo igual al de los cuadros */
+  padding: 0 10px; /* Espaciado dentro del legend */
+  border-radius: 5px; /* Bordes redondeados para el legend */
+}
+
+/* Estilo para la descripción de cada leyenda */
+p {
+  font-size: 14px; /* Tamaño de la descripción */
+  color: #555; /* Color gris para el texto */
+  margin-top: 10px; /* Espaciado entre el título y la descripción */
+}
+
+/* Título principal */
+.title {
+  font-size: 24px; /* Tamaño de fuente del título */
+  font-weight: bold; /* Título en negrita */
+  color: #0055b8; /* Color azul */
+  text-align: center; /* Centrar el título */
+  margin-bottom: 20px; /* Espaciado inferior */
+}
+
+/* Media query para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+  /* Ajustamos la dirección del layout para pantallas más pequeñas */
+  .MapaCircular {
+    flex-direction: column; /* Apilamos el mapa y las leyendas verticalmente */
+    align-items: center; /* Centrar los elementos */
+  }
+
+  .mapa {
+    width: 80%; /* Hacemos que el mapa ocupe más espacio en pantallas pequeñas */
+    max-width: 100%; /* El mapa puede ocupar el 100% en pantallas pequeñas */
+    margin-bottom: 20px; /* Margen inferior entre el mapa y las leyendas */
+  }
+
+  .redireccion {
+    width: 100%; /* Las leyendas ocupan el 100% del contenedor */
+    padding: 0 10%; /* Espaciado lateral para las leyendas */
+  }
+
+  /* Ajustamos el tamaño de los cuadros de leyenda */
+  .cuadro {
+    width: 100%; /* Cada cuadro ocupa el 100% */
+    padding: 15px; /* Ajustamos el padding en pantallas pequeñas */
+  }
+
+  /* Ajustamos el tamaño del texto */
+  legend {
+    font-size: 16px; /* Hacemos que el texto sea más pequeño en pantallas pequeñas */
+  }
+
+  p {
+    font-size: 12px; /* Reducimos el tamaño de la descripción */
+  }
+}
+
+/* Media query para pantallas muy pequeñas (dispositivos móviles) */
+@media (max-width: 480px) {
+  /* Ajustamos aún más el tamaño y el espaciado en pantallas muy pequeñas */
+  .MapaCircular {
+    padding: 10px; /* Menos espaciado en pantallas muy pequeñas */
+  }
+
+  .mapa {
+    width: 90%; /* El mapa ocupa el 90% en pantallas muy pequeñas */
+  }
+
+  .redireccion {
+    width: 100%; /* Las leyendas siguen ocupando todo el contenedor */
+    padding: 0 5%; /* Menos espaciado lateral */
+  }
+
+  .cuadro {
+    width: 100%; /* Los cuadros siguen ocupando el 100% */
+    padding: 10px; /* Menos padding en pantallas muy pequeñas */
+  }
+
+  legend {
+    font-size: 14px; /* Reducimos aún más el tamaño del título */
+  }
+
+  p {
+    font-size: 10px; /* Reducimos el tamaño de la descripción */
+  }
+}
+
+
+
+/* ESTILOS PARA LA NOTICIA*/
+/* Estilos generales para el componente de noticias */
+.newsletter {
+  display: flex; /* Usamos flexbox para que la imagen y el texto estén uno al lado del otro */
+  justify-content: space-between; /* Espacio entre la imagen y el texto */
+  align-items: center; /* Alineación vertical al centro */
+  padding: 50px;
+
+  background-color: #0d2e5d; /* Fondo de color oscuro */
+  margin-top: 50px; /* Margen superior */
+  color: white; /* Color blanco para el texto */
+}
+
+/* Estilo para la imagen */
+.newsletter-image {
+  width: 25%; /* La imagen ocupa el 40% del contenedor */
+
+
+}
+
+.news-img {
+
+  width: 90%;
+  height: auto;
+}
+
+/* Estilo para el texto */
+.newsletter-text {
+  width: 55%; /* El texto ocupa el 55% del contenedor */
+  text-align: left; /* Alineamos el texto a la izquierda */
+}
+
+/* Estilo para el título */
+.newsletter-title {
+  font-size: 36px; /* Tamaño grande para el título */
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Descripción */
+.descriptionNews{
+  font-size: 16px; /* Tamaño de fuente para la descripción */
+  margin-bottom: 20px;
+  line-height: 1.5; /* Espaciado entre líneas para que el texto sea más legible */
+  color: #f4f4f4;
+}
+
+/* Botón */
+.newsletter-button {
+  padding: 15px 30px; /* Espaciado dentro del botón */
+  font-size: 18px; /* Tamaño de la fuente */
+  background-color: #00b3e6; /* Color azul para el botón */
+  color: white; /* Texto blanco */
+  border: none;
+  border-radius: 30px; /* Bordes redondeados */
+  cursor: pointer;
+  transition: background-color 0.3s; /* Transición suave cuando se pasa el mouse */
+}
+
+.newsletter-button:hover {
+  background-color: #0099cc; /* Cambiar el color cuando se pasa el mouse */
+}
+
+/* Nota en el pie de página */
+.footer-note {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #bbb; /* Color gris claro para la nota */
+}
+
+/* Media query para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+  /* Cambiar la dirección del layout para pantallas más pequeñas */
+  .newsletter {
+    flex-direction: column; /* Apilar la imagen y el texto verticalmente */
+    align-items: center; /* Centrar los elementos */
+  }
+
+  /* Ajustar la imagen para pantallas pequeñas */
+  .newsletter-image {
+    width: 80%; /* Hacer la imagen más grande en pantallas pequeñas */
+    margin-bottom: 20px; /* Espaciado entre la imagen y el texto */
+  }
+
+  .newsletter-text {
+    width: 90%; /* Ajustar el ancho del texto en pantallas pequeñas */
+    text-align: center; /* Centrar el texto */
+  }
+
+  /* Ajustar el tamaño del título en pantallas pequeñas */
+  .newsletter-title {
+    font-size: 28px; /* Reducir el tamaño del título */
+  }
+
+  /* Ajustar el tamaño de la descripción */
+  .newsletter-description {
+    font-size: 14px; /* Reducir el tamaño de la descripción */
+  }
+
+  /* Ajustar el tamaño y el espaciado del botón */
+  .newsletter-button {
+    width: 100%; /* Hacer que el botón ocupe el 100% del contenedor */
+    padding: 12px 0; /* Ajustar el espaciado del botón */
+    font-size: 16px; /* Reducir el tamaño del botón */
+  }
+}
+
+/* Media query para pantallas muy pequeñas (dispositivos móviles) */
+@media (max-width: 480px) {
+  /* Ajustamos aún más el tamaño y el espaciado en pantallas muy pequeñas */
+  .newsletter {
+    padding: 15px; /* Reducir el padding en pantallas pequeñas */
+  }
+
+  .newsletter-image {
+    width: 90%; /* Hacer que la imagen ocupe el 90% del contenedor */
+  }
+
+  .newsletter-text {
+    width: 100%; /* El texto ocupa todo el contenedor */
+  }
+
+  .newsletter-title {
+    font-size: 24px; /* Reducir el tamaño del título */
+  }
+
+  .newsletter-description {
+    font-size: 12px; /* Reducir el tamaño de la descripción */
+  }
+
+  .newsletter-button {
+    width: 100%; /* El botón ocupa el 100% en pantallas pequeñas */
+    padding: 10px 0; /* Ajustar el padding en pantallas pequeñas */
+    font-size: 14px; /* Reducir el tamaño del botón */
+  }
+}

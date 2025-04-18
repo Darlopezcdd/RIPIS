@@ -1,0 +1,98 @@
+.Contenedor{
+  display: grid;
+  grid-auto-rows: auto;
+}
+.Sobre_Nosotros{
+  width: 50%;
+  justify-items: center;
+  text-align: justify;
+  margin:auto;
+}
+.Mision-Vision{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6%;
+  margin:3%;
+  justify-content: center;
+  text-align: justify;
+}
+.Mision-Vision h2{
+  text-align: center;
+}
+@media (max-width: 900px) {
+  .Sobre_Nosotros {
+    width: 80%;
+  }
+  .Mision-Vision{
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+  }
+  .Mision-Vision h2{
+    text-align: center;
+  }
+}
+/* Animaciones específicas */
+
+.slash-abajo {
+  animation-name:slideDesdeAbajo;
+  animation-duration:2s;
+}
+
+.slash-izquierda {
+  animation-name: slideDesdeIzquierda;
+  animation-duration:2s;
+}
+.slash-derecha {
+  animation-name: slideDesdeDerecha;
+  animation-duration:2s;
+}
+.slash-arriba {
+  animation-name: slideDesdeArriba;
+  animation-duration:2s;
+}
+
+/* Keyframes */
+
+@keyframes slideDesdeArriba {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDesdeDerecha {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideDesdeIzquierda {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideDesdeAbajo {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
