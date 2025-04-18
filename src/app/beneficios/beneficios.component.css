@@ -12,7 +12,7 @@
 
 .Beneficios, h2, p, .Objetivos {
   animation: fadeInUp 1s ease-out forwards;
-  opacity: 0; /* Iniciar oculto */
+  opacity: 0;
 }
 main {
   padding: 20px;
