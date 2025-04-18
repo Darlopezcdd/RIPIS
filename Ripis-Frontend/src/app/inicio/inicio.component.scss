@@ -1,0 +1,239 @@
+/* carousel.component.css */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 720px;
+  margin: auto;
+  overflow: hidden;
+  cursor: grab;
+}
+
+.carousel-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  transition: opacity 0.5s ease;
+  /* Animación de opacidad */
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: auto;
+
+}
+
+.fade {
+  opacity: 0.5;
+  /* Hace que la imagen desaparezca */
+}
+
+button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.prev-btn {
+  left: 10px;
+}
+
+.next-btn {
+  right: 10px;
+}
+
+button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+/* ESTILOS DE LOS STATS*/
+
+
+/* Contenedor principal */
+.stats-container {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  /* Espacio igual entre las cajas */
+  gap: 30px;
+  /* Distancia entre las cajas */
+  padding: 10%;
+  /* Espaciado interno */
+  margin: auto;
+  /* Márgenes alrededor */
+  flex-wrap: wrap;
+  /* Para que las cajas se ajusten si el tamaño de la pantalla es pequeño */
+
+}
+
+.info {
+  background-color: #f4f4f4;
+  /* Fondo gris claro */
+  border-radius: 10px;
+  /* Bordes redondeados */
+  padding: 20px;
+  /* Espaciado interno */
+  text-align: center;
+  /* Centrado de texto */
+  flex: 1;
+  /* Para que cada caja ocupe el mismo espacio */
+  min-width: 200px;
+  /* Ancho mínimo */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* Sombra sutil */
+
+}
+
+.amount {
+  font-size: 32px;
+  /* Tamaño de la cifra */
+  color: #0055b8;
+  /* Color azul para las cifras */
+  font-weight: bold;
+  /* Hacer la cifra en negrita */
+
+}
+
+.description {
+  font-size: 14px;
+  /* Tamaño de la descripción */
+  color: #555;
+  /* Color gris para el texto */
+  margin-top: 10px;
+  /* Espaciado entre la cifra y la descripción */
+
+}
+
+/* ESTILOS DE MAPA Y LEYENDAS */
+.MapaCircular {
+  display: flex;
+  justify-content: space-between;
+  padding: 5%
+}
+
+.mapa {
+  width: 60%;
+  max-width: 600px;
+  position: relative;
+}
+
+.mapa-img {
+  width: 100%;
+  height: auto;
+}
+
+.redireccion {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+}
+
+.cuadro {
+  background-color: #f4f4f4;
+  border: 2px solid #ddd; /* Borde sutil alrededor de los cuadros */
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+legend {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  background-color: #f4f4f4;
+  padding: 0 10px;
+  border-radius: 5px;
+}
+
+p {
+  font-size: 14px;
+  color: #555;
+  margin-top: 10px;
+}
+.title{
+  font-size: 24px;
+  font-weight: bold;
+  color: #0055b8;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+
+/* ESTILOS PARA LA NOTICIA*/
+/* Contenedor principal para la sección */
+.newsletter {
+  display: flex; /* Usamos flexbox para que la imagen y el texto estén uno al lado del otro */
+  justify-content: space-between; /* Espacio entre la imagen y el texto */
+  align-items: center; /* Alineación vertical al centro */
+  padding: 30px;
+  background-color: #0d2e5d; /* Fondo de color oscuro */
+  border-radius: 15px; /* Bordes redondeados */
+  margin-top: 50px; /* Margen superior */
+  color: white; /* Color blanco para el texto */
+}
+
+/* Estilo para la imagen */
+.newsletter-image {
+  width: 40%; /* La imagen ocupa el 40% del contenedor */
+}
+
+.news-img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px; /* Bordes redondeados para la imagen */
+}
+
+/* Estilo para el texto */
+.newsletter-text {
+  width: 55%; /* El texto ocupa el 55% del contenedor */
+  text-align: left; /* Alineamos el texto a la izquierda */
+}
+
+/* Estilo para el título */
+.newsletter-title {
+  font-size: 36px; /* Tamaño grande para el título */
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Descripción */
+.newsletter-description {
+  font-size: 16px; /* Tamaño de fuente para la descripción */
+  margin-bottom: 20px;
+  line-height: 1.5; /* Espaciado entre líneas para que el texto sea más legible */
+}
+
+/* Botón */
+.newsletter-button {
+  padding: 15px 30px; /* Espaciado dentro del botón */
+  font-size: 18px; /* Tamaño de la fuente */
+  background-color: #00b3e6; /* Color azul para el botón */
+  color: white; /* Texto blanco */
+  border: none;
+  border-radius: 30px; /* Bordes redondeados */
+  cursor: pointer;
+  transition: background-color 0.3s; /* Transición suave cuando se pasa el mouse */
+}
+
+.newsletter-button:hover {
+  background-color: #0099cc; /* Cambiar el color cuando se pasa el mouse */
+}
+
+/* Nota en el pie de página */
+.footer-note {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #bbb; /* Color gris claro para la nota */
+}
