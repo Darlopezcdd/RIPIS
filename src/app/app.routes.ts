@@ -5,7 +5,7 @@ import {InicioComponent} from './inicio/inicio.component';
 import {SobreNosotrosComponent} from './sobre-nosotros/sobre-nosotros.component';
 import { BeneficiosComponent } from './beneficios/beneficios.component';
 import { UnialiadasComponent } from './unialiadas/unialiadas.component';
-
+import { ErrorComponent } from './error/error.component';
 
 export const routes: Routes = [
   { path: '', component: InicioComponent },
@@ -13,6 +13,7 @@ export const routes: Routes = [
   { path: 'sobre-nosotros', component: SobreNosotrosComponent },
   { path: 'beneficios', component: BeneficiosComponent },
   { path: 'unialiadas', component: UnialiadasComponent },
+  { path: '**', component: ErrorComponent }
 ];
 
 @NgModule({
