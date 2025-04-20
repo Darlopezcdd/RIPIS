@@ -1,33 +1,32 @@
 <section class="Navegacion">
   <section class="Logos">
-
-    <a routerLink="">RIPIS</a>
+    <a (click)="redirigirConRecargaAngular('')"><img [src]="images" alt="Imagen"/> </a>
+    <a (click)="redirigirConRecargaAngular('')">RIPIS</a>
   </section>
 
+  <button class="menu-toggle" (click)="toggleMenu()">
+    {{ menuVisible ? '' : '☰' }}
+  </button>
   <section class="enlaces">
 
-
-    <button class="menu-toggle" (click)="toggleMenu()">
-      {{ menuVisible ? '' : 'Menu' }}
-    </button>
-
     <ul class="menu" [class.menu-active]="menuVisible">
-
+      <!-- Botón de cerrar menú solo visible cuando el menú está activo -->
+      <button class="close-menu" *ngIf="menuVisible" (click)="toggleMenu()">X</button>
       <li class="submenu-trigger Acerca" (mouseenter)="mostrarSubmenu('Acerca')"
           (mouseleave)="ocultarSubmenu('Acerca')">
-        <a href="#">Acerca</a>
+        <a >Acerca</a>
         <ul class="submenu-box submenu-Acerca" [style.opacity]="submenuActivo === 'Acerca' ? '1' : '0'"
             [style.visibility]="submenuActivo === 'Acerca' ? 'visible' : 'hidden'">
           <li class="opciones">
-            <a routerLink="/sobre-nosotros">Sobre Nosotros</a>
-            <a href="#">Nuestros Miembros</a>
+            <a (click)="redirigirConRecargaAngular('/sobre-nosotros')">Sobre Nosotros</a>
+            <a (click)="redirigirConRecargaAngular('/Miembros')">Nuestros Miembros</a>
           </li>
           <li class="opciones">
             <a href="#">ODS</a>
             <a href="#">Registro Senecyt</a>
           </li>
           <li class="opciones opciones-ultimo">
-            <a href="#">Estatutos</a>
+            <a (click)="redirigirConRecargaAngular('/Estatutos')">Estatutos</a>
             <a href="#">Imagen Institucional</a>
           </li>
         </ul>
@@ -35,11 +34,11 @@
 
       <li class="submenu-trigger Beneficios" (mouseenter)="mostrarSubmenu('Beneficios')"
           (mouseleave)="ocultarSubmenu('Beneficios')">
-        <a href="#">Beneficios</a>
+        <a>Beneficios</a>
         <ul class="submenu-box submenu-Beneficios" [style.opacity]="submenuActivo === 'Beneficios' ? '1' : '0'"
             [style.visibility]="submenuActivo === 'Beneficios' ? 'visible' : 'hidden'">
           <li class="opciones">
-            <a routerLink="/beneficios">Descripción</a>
+            <a  (click)="redirigirConRecargaAngular('/beneficios')">Beneficios de la red</a>
             <a href="#">Conectividad</a>
           </li>
           <li class="opciones">
@@ -54,36 +53,35 @@
 
       <li class="submenu-trigger Publicaciones" (mouseenter)="mostrarSubmenu('Publicaciones')"
           (mouseleave)="ocultarSubmenu('Publicaciones')">
-        <a href="#">Blog RIPIS</a>
+          <a (click)="redirigirConRecargaAngular('/Blog')">Blog RIPIS</a>
       </li>
 
       <li class="submenu-trigger Comunidad" (mouseenter)="mostrarSubmenu('Comunidad')"
           (mouseleave)="ocultarSubmenu('Comunidad')">
-        <a href="#">Comunidad</a>
+        <a>Comunidad</a>
         <ul class="submenu-box submenu-Comunidad" [style.opacity]="submenuActivo === 'Comunidad' ? '1' : '0'"
             [style.visibility]="submenuActivo === 'Comunidad' ? 'visible' : 'hidden'">
           <li class="opciones">
-            <a routerLink="/unialiadas">Universidades Aliadas</a>
-            <a routerLink="/sobre-nosotros">Sobre Nosotros</a>
+            <a (click)="redirigirConRecargaAngular('/Unialiadas')">Universidades Aliadas</a>
+            <a (click)="redirigirConRecargaAngular('/sobre-nosotros')">Sobre Nosotros</a>
           </li>
           <li class="opciones">
             <a href="#">Blog</a>
             <a href="#">Comunidad de Rectores</a>
           </li>
           <li class="opciones opciones-ultimo">
-            <a href="#">Divulgación</a>
           </li>
         </ul>
       </li>
 
       <li class="submenu-trigger Eventos" (mouseenter)="mostrarSubmenu('Eventos')"
           (mouseleave)="ocultarSubmenu('Eventos')">
-        <a href="#">Eventos</a>
+        <a >Eventos</a>
         <ul class="submenu-box submenu-Eventos" [style.opacity]="submenuActivo === 'Eventos' ? '1' : '0'"
             [style.visibility]="submenuActivo === 'Eventos' ? 'visible' : 'hidden'">
           <li class="opciones">
             <p>Agenda</p>
-            <a href="#">Planificacion Anual</a>
+            <a (click)="redirigirConRecargaAngular('/Planificacion')">Planificacion Anual</a>
           </li>
           <li class="opciones">
             <p>Programas</p>
@@ -97,16 +95,20 @@
       </li>
 
       <li class="submenu-trigger Contacto" (click)="mostrarSubmenu('Contacto')">
-        <a routerLink="/contacto">Contacto</a>
+        <a (click)="redirigirConRecargaAngular('/contacto')">Contacto</a>
         <ul class="submenu-box submenu-Contacto" *ngIf="submenuActivo === 'Contacto'">
           <li class="opciones">
 
           </li>
         </ul>
       </li>
+      <div class="BotonTelefonoRegistro">
+        <button class="BotonRegistro" (click)="redirigirConRecargaAngular('/Registro')">Registro</button>
+      </div>
     </ul>
+    <div class="Contenedor-Boton">
+      <button class="BotonRegistro" (click)="redirigirConRecargaAngular('/Registro')">Registro</button>
+    </div>
 
-    <!-- Botón de cerrar menú solo visible cuando el menú está activo -->
-    <button class="close-menu" *ngIf="menuVisible" (click)="toggleMenu()">Cerrar Menú</button>
   </section>
 </section>
