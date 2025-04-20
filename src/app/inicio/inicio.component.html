@@ -1,0 +1,63 @@
+<!-- carousel.component.html -->
+<div class="carousel-container" (mousedown)="startDrag($event)" (mousemove)="onDrag($event)" (mouseup)="endDrag($event)"
+     (mouseleave)="endDrag($event)">
+  <!-- Imagen actual que se muestra -->
+  <div class="carousel-slide" [class.fade]="isFading">
+    <img [src]="images[currentIndex]" alt="Imagen {{ currentIndex + 1 }}" draggable="false" />
+  </div>
+
+  <!-- Botones de navegación -->
+  <button (click)="prevImage()" class="prev-btn">&#10094;</button>
+  <button (click)="nextImage()" class="next-btn">&#10095;</button>
+</div>
+
+<div class="stats-container">
+  <div class="info">
+    <p class="amount">+$10M</p>
+    <p class="description">invertidos en fondos para Ciencia Tecnología e Innovación</p>
+  </div>
+  <div class="info">
+    <p class="amount">+5700</p>
+    <p class="description">investigadores y docentes beneficiados mediante los programas de fondos</p>
+  </div>
+  <div class="info">
+    <p class="amount">+$900K</p>
+    <p class="description">captados para financiamiento de proyectos de investigación y desarrollo social</p>
+  </div>
+</div>
+
+<h1 class="title">TITULO DE RIPIS ORGANIZACIÓN</h1>
+
+<div class="MapaCircular">
+  <div class="mapa">
+    <img src="MapaCircular.png" alt="Mapa" class="mapa-img" draggable="false" />
+  </div>
+
+  <div class="redireccion">
+    <fieldset class="cuadro">
+      <legend class="leyenda">Redes de Conocimiento</legend>
+      <p>Descripción de redes de conocimiento</p>
+    </fieldset>
+
+    <fieldset class="cuadro">
+      <legend class="leyenda">Cultura de Innovación</legend>
+      <p>Descripción de cultura de innovación</p>
+    </fieldset>
+
+    <fieldset class="cuadro">
+      <legend class="leyenda">Transformación Digital</legend>
+      <p>Descripción de transformación digital</p>
+    </fieldset>
+  </div>
+</div>
+
+<div class="newsletter">
+  <div class="newsletter-image">
+    <img src="news.svg" alt="Imagen de noticia" class="news-img" />
+  </div>
+  <div class="newsletter-text">
+    <h2 class="newsletter-title">RIPIS</h2>
+    <p class="descriptionNews">¡NO TE PIERDAS LAS NOVEDADES DE NUESTROS BENEFICIOS! <br> RECIBE NUESTROS BOLETINES Y NOTICIAS EN TU CORREO ELECTRÓNICO.</p>
+    <p class="footer-note">* Sus datos personales son estrictamente para nuestro uso y puede darse de baja en cualquier momento.</p>
+  </div>
+</div>
